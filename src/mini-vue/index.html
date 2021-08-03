@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./render.js"></script>
+    <script>
+      const vnode = h("div", { class: "thornsh" }, [
+        h("h2", null, "当前计数: 100"),
+        h("button", null, "+1"),
+      ]);
+
+      mount(vnode, document.getElementById("app"));
+
+      console.log(vnode);
+
+      const vnode1 = h("div", { class: "change" }, "aaaaaaa");
+
+      patch(vnode, vnode1);
+    </script>
+  </body>
+</html>
